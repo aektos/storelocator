@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '../store';
+import { STORES } from '../mock-stores';
 
 @Component({
   selector: 'app-stores',
@@ -7,14 +8,17 @@ import { Store } from '../store';
   styleUrls: ['./stores.component.css']
 })
 export class StoresComponent implements OnInit {
-  store: Store = {
-    id: 1,
-    name: 'La petite ressourcerie'
-  };
+  stores = STORES;
 
+  selectedStore: Store;
+  onSelect(store: Store): void {
+    this.selectedStore = store;
+  }
+  
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
