@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '../store';
 import { STORES } from '../mock-stores';
+import { StoreService } from '../store.service';
 
 @Component({
   selector: 'app-stores',
@@ -8,17 +9,22 @@ import { STORES } from '../mock-stores';
   styleUrls: ['./stores.component.css']
 })
 export class StoresComponent implements OnInit {
-  stores = STORES;
-
+  stores: Store[];
   selectedStore: Store;
+
+  constructor(private storeService: StoreService) { }
+
+  ngOnInit() {
+    this.getHeroes();
+  }
+
   onSelect(store: Store): void {
     this.selectedStore = store;
   }
-  
-  constructor() { }
 
-  ngOnInit() {
-
+  getHeroes(): void {
+    this.storeService.getStores()
+      .subscribe(stores => this.stores = stores);
   }
 
 }
