@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { StoresComponent } from './stores/stores.component';
 import { StoreDetailComponent } from './store-detail/store-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { StoresMapComponent } from './stores-map/stores-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StoresComponent,
     StoreDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    StoresMapComponent
   ],
   imports: [
     BrowserModule,
