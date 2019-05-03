@@ -13,20 +13,20 @@ export class StoresComponent implements OnInit {
   constructor(private storeService: StoreService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getStores();
   }
 
-  getHeroes(): void {
+  getStores(): void {
     this.storeService.getStores()
       .subscribe(stores => this.stores = stores);
   }
 
-  add(name: string): void {
+  add(name: string, lat: number, lng: number): void {
     name = name.trim();
-    if (!name) { return; }
-    this.storeService.addStore({ name } as Store)
-      .subscribe(hero => {
-        this.stores.push(hero);
+    if (!name && !lat && !lng) { return; }
+    this.storeService.addStore({ name: name, lat: lat, lng: lng } as Store)
+      .subscribe(store => {
+        this.stores.push(store);
       });
   }
 

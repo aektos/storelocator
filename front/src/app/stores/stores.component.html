@@ -5,7 +5,7 @@
       <li *ngFor="let store of stores" [class.light-green]="store === selectedStore" (click)="onSelect(store)"
         class="collection-item">
         <a routerLink="/store/detail/{{store.id}}">
-          <span class="badge">id: {{store.id}}</span> {{store.name}}
+          <span class="badge">id: {{store.id}}</span> {{store.name}} ({{store.lat}}, {{store.lng}})
         </a>
         <button class="btn btn-small right red" title="delete store" (click)="delete(store)"><i
             class="material-icons">close</i></button>
@@ -15,8 +15,17 @@
       <label>Store name:
         <input #storeName />
       </label>
+
+      <label>Store latitude:
+        <input #storeLat />
+      </label>
+      <label>Store longitude:
+        <input #storeLng />
+      </label>
       <!-- (click) passes input value to add() and then clears the input -->
-      <button (click)="add(storeName.value); storeName.value=''" class="btn light-green">
+      <button
+        (click)="add(storeName.value, storeLat.value, storeLng.value); storeName.value=''; storeLat.value=''; storeLng.value=''"
+        class="btn light-green">
         add
       </button>
     </div>

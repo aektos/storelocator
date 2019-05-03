@@ -2,8 +2,16 @@
   <h2>{{store.name | uppercase}} Details</h2>
   <div><span>id: </span>{{store.id}}</div>
   <div>
-    <label>name:
+    <label>Name:
       <input [(ngModel)]="store.name" placeholder="name" />
+    </label>
+
+    <label>Lat:
+      <input [(ngModel)]="store.lat" placeholder="latitude" />
+    </label>
+
+    <label>Lng:
+      <input [(ngModel)]="store.lng" placeholder="longtitude" />
     </label>
   </div>
   <button (click)="save()" class="btn light-green">save</button>

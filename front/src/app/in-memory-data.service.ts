@@ -8,9 +8,9 @@ import { Injectable } from '@angular/core';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const stores = [
-      { id: 11, name: 'The zero waste shop' },
-      { id: 12, name: 'Vegan shop' },
-      { id: 13, name: 'La petite ressourcerie' }
+      { id: 11, name: 'The zero waste shop', lat: 43.675819, lng: 7.289429 },
+      { id: 12, name: 'Vegan shop', lat: 43.675819, lng: 7.289429 },
+      { id: 13, name: 'La petite ressourcerie', lat: 43.675819, lng: 7.289429 }
     ];
     return {stores};
   }
