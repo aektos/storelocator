@@ -11,6 +11,7 @@ import { StoresComponent } from './stores/stores.component';
 import { StoreDetailComponent } from './store-detail/store-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { StoresMapComponent } from './stores-map/stores-map.component';
+import { StoreNewComponent } from './store-new/store-new.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StoresMapComponent } from './stores-map/stores-map.component';
     StoresComponent,
     StoreDetailComponent,
     MessagesComponent,
-    StoresMapComponent
+    StoresMapComponent,
+    StoreNewComponent
   ],
   imports: [
     BrowserModule,

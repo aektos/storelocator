@@ -8,9 +8,9 @@ import { Injectable } from '@angular/core';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const stores = [
-      { id: 11, name: 'The zero waste shop', lat: 48.856613, lng: 2.352222 },
-      { id: 12, name: 'Vegan shop', lat: 43.296482, lng: 5.369780 },
-      { id: 13, name: 'La petite ressourcerie', lat: 43.675819, lng: 7.289429 }
+      { id: 1, name: 'The zero waste shop', lat: 48.856613, lng: 2.352222 },
+      { id: 2, name: 'Vegan shop', lat: 43.296482, lng: 5.369780 },
+      { id: 3, name: 'La petite ressourcerie', lat: 43.675819, lng: 7.289429 }
     ];
     return {stores};
   }
@@ -21,6 +21,6 @@ export class InMemoryDataService implements InMemoryDbService {
   // if the stores array is not empty, the method below returns the highest
   // store id + 1.
   genId(stores: Store[]): number {
-    return stores.length > 0 ? Math.max(...stores.map(store => store.id)) + 1 : 11;
+    return stores.length > 0 ? Math.max(...stores.map(store => store.id)) + 1 : 1;
   }
 }

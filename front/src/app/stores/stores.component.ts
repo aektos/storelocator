@@ -21,15 +21,6 @@ export class StoresComponent implements OnInit {
       .subscribe(stores => this.stores = stores);
   }
 
-  add(name: string, lat: number, lng: number): void {
-    name = name.trim();
-    if (!name && !lat && !lng) { return; }
-    this.storeService.addStore({ name: name, lat: lat, lng: lng } as Store)
-      .subscribe(store => {
-        this.stores.push(store);
-      });
-  }
-
   delete(store: Store): void {
     this.stores = this.stores.filter(h => h !== store);
     this.storeService.deleteStore(store).subscribe();

@@ -11,23 +11,5 @@
             class="material-icons">close</i></button>
       </li>
     </ul>
-    <div>
-      <label>Store name:
-        <input #storeName />
-      </label>
-
-      <label>Store latitude:
-        <input #storeLat />
-      </label>
-      <label>Store longitude:
-        <input #storeLng />
-      </label>
-      <!-- (click) passes input value to add() and then clears the input -->
-      <button
-        (click)="add(storeName.value, storeLat.value, storeLng.value); storeName.value=''; storeLat.value=''; storeLng.value=''"
-        class="btn light-green">
-        add
-      </button>
-    </div>
   </div>
 </div>

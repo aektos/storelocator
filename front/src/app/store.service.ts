@@ -19,9 +19,8 @@ export class StoreService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
+  /** GET all stores */
   getStores(): Observable<Store[]> {
-    // TODO: send the message _after_ fetching the stores
-    this.messageService.add('StoreService: fetched stores');
     return this.http.get<Store[]>(this.storesUrl)
       .pipe(
         tap(_ => this.log('fetched stores')),
