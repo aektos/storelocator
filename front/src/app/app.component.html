@@ -1,10 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<nav class="light-green">
+  <div class="nav-wrapper container">
+    <a routerLink="/" class="brand-logo">Storelocator</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="/stores">Stores</a></li>
+    </ul>
+  </div>
+</nav>
 <div class="container">
   <h1 class="green-text center-align">
     {{ title }}
   </h1>
-<app-stores></app-stores>
-<app-messages></app-messages>
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
 </div>
-
-<router-outlet></router-outlet>

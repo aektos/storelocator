@@ -2,10 +2,12 @@
   <h2 class="light-green-text">Stores</h2>
   <div class="col s6">
     <ul class="collection">
-      <li *ngFor="let store of stores" [class.light-green]="store === selectedStore" (click)="onSelect(store)" class="collection-item">
-        <span class="badge">id: {{store.id}}</span> {{store.name}}
+      <li *ngFor="let store of stores" [class.light-green]="store === selectedStore" (click)="onSelect(store)"
+        class="collection-item">
+        <a routerLink="/store/detail/{{store.id}}">
+          <span class="badge">id: {{store.id}}</span> {{store.name}}
+        </a>
       </li>
     </ul>
   </div>
-  <app-store-detail [store]="selectedStore"></app-store-detail>
 </div>
