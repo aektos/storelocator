@@ -33,4 +33,9 @@ export class StoreDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    this.storeService.updateStore(this.store)
+      .subscribe(() => this.goBack());
+  }
 }

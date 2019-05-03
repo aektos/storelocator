@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '../store';
-import { STORES } from '../mock-stores';
 import { StoreService } from '../store.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { StoreService } from '../store.service';
 })
 export class StoresComponent implements OnInit {
   stores: Store[];
-  
+
   constructor(private storeService: StoreService) { }
 
   ngOnInit() {
@@ -22,4 +21,17 @@ export class StoresComponent implements OnInit {
       .subscribe(stores => this.stores = stores);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.storeService.addStore({ name } as Store)
+      .subscribe(hero => {
+        this.stores.push(hero);
+      });
+  }
+
+  delete(store: Store): void {
+    this.stores = this.stores.filter(h => h !== store);
+    this.storeService.deleteStore(store).subscribe();
+  }
 }
